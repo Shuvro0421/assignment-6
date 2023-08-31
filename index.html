@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font family Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,79 +41,14 @@
     <!-- main -->
     <main>
         <!-- category button -->
-        <div class="md:flex md:flex-row grid grid-cols-2  items-center justify-center gap-4">
-            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
-            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
-            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
-            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
+        <div id="category-btn"  class="md:flex grid grid-cols-2 text-center gap-4 items-center justify-center">
+
         </div>
 
+
         <!-- cards -->
-        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
+        <div id="category-cards" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
             <!-- single card -->
-            <div class="card card-compact mt-10 bg-base-100 ">
-                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
-                <div class="card-body">
-                    <div class="flex gap-2">
-                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
-                        <div class="">
-                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
-                            <div class="mt-2 text-sm text-gray-500">
-                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
-                                <p class="mt-2">91K views</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single card -->
-            <div class="card card-compact mt-10 bg-base-100 ">
-                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
-                <div class="card-body">
-                    <div class="flex gap-2">
-                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
-                        <div class="">
-                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
-                            <div class="mt-2 text-sm text-gray-500">
-                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
-                                <p class="mt-2">91K views</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single card -->
-            <div class="card card-compact mt-10 bg-base-100 ">
-                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
-                <div class="card-body">
-                    <div class="flex gap-2">
-                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
-                        <div class="">
-                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
-                            <div class="mt-2 text-sm text-gray-500">
-                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
-                                <p class="mt-2">91K views</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single card -->
-            <div class="card card-compact mt-10 bg-base-100 ">
-                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
-                <div class="card-body">
-                    <div class="flex gap-2">
-                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
-                        <div class="">
-                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
-                            <div class="mt-2 text-sm text-gray-500">
-                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
-                                <p class="mt-2">91K views</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- modal -->
         <div>
@@ -128,6 +64,7 @@
                 </form>
             </dialog>
         </div>
+        
 
 
     </main>
