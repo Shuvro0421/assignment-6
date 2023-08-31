@@ -80,7 +80,7 @@ const loadCategoryCard = async (id) => {
             `
             categoryCards.appendChild(cardDiv);
 
-            // sortByView(`${cardData.others.views}`);
+            
 
 
 
@@ -110,16 +110,20 @@ const convertSecsToHoursMins = (seconds) => {
 
 
 // sort by view
-const sortByView = (sort1) => {
+const sortByView = () => {
 
-    if (sort1.includes('K')) {
-        const sorting = parseFloat(sort1) * 1000;
-    }
-
+    loadCategoryCard(true);
 
 }
 
 
+
+// blog
+const blog = () =>{
+
+    const newWindow = window.open('blog.html' , '_blank');
+
+}
 
 loadCategoryCard('1000');
 loadData();
