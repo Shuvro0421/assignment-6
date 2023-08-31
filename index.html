@@ -20,7 +20,7 @@
     <title>Phero Tube</title>
 </head>
 
-<body>
+<body class="m-10">
     <!-- header -->
     <header class="m-5">
         <!-- navbar -->
@@ -32,7 +32,7 @@
                 <a class="btn btn-ghost bg-gray-200 normal-case text-xl">Sort by view</a>
             </div>
             <div class="">
-                <button class="btn btn-active bg-[#FF1F3D] text-white ">Blog</button>
+                <button onclick="my_modal_1.showModal()" class="btn btn-active bg-[#FF1F3D] text-white ">Blog</button>
             </div>
         </div>
         <div class="border-b-2 border-gray-200 mt-5"></div>
@@ -40,6 +40,95 @@
     <!-- main -->
     <main>
         <!-- category button -->
+        <div class="md:flex md:flex-row grid grid-cols-2  items-center justify-center gap-4">
+            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
+            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
+            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
+            <button class="btn btn-active  bg-[#FF1F3D] text-white">Secondary</button>
+        </div>
+
+        <!-- cards -->
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
+            <!-- single card -->
+            <div class="card card-compact mt-10 bg-base-100 ">
+                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
+                <div class="card-body">
+                    <div class="flex gap-2">
+                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
+                        <div class="">
+                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
+                                <p class="mt-2">91K views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single card -->
+            <div class="card card-compact mt-10 bg-base-100 ">
+                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
+                <div class="card-body">
+                    <div class="flex gap-2">
+                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
+                        <div class="">
+                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
+                                <p class="mt-2">91K views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single card -->
+            <div class="card card-compact mt-10 bg-base-100 ">
+                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
+                <div class="card-body">
+                    <div class="flex gap-2">
+                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
+                        <div class="">
+                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
+                                <p class="mt-2">91K views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single card -->
+            <div class="card card-compact mt-10 bg-base-100 ">
+                <img class="rounded-lg" src="./images/naruto.jpg" alt="image" />
+                <div class="card-body">
+                    <div class="flex gap-2">
+                        <img class="w-[40px] h-[40px] rounded-full" src="./images/adib - Copy.png" alt="">
+                        <div class="">
+                            <p class="font-bold">Building a Winning UX Strategy Using the Kano Model</p>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <p class="flex gap-2">Awlad Hossain <img src="./images/fi_10629607.png" alt=""></p>
+                                <p class="mt-2">91K views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+        <div>
+            <!-- You can open the modal using ID.showModal() method -->
+            <dialog id="my_modal_1" class="modal">
+                <form method="dialog" class="modal-box w-11/12 max-w-5xl">
+                    <h3 class="font-bold text-lg">Hello!</h3>
+                    <p class="py-4">Click the button below to close</p>
+                    <div class="modal-action">
+                        <!-- if there is a button, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+
 
     </main>
 
