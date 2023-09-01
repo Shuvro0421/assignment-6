@@ -27,12 +27,21 @@ const loadData = async () => {
 const loadCategoryCard = async (id) => {
 
 
+
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await response.json();
     const cardDatas = data.data;
 
     const categoryCards = document.getElementById('category-cards');
     const categoryCards2 = document.getElementById('category-cards-2');
+
+    cardDatas.sort((a, b) => {
+        const aNumber = parseFloat(a.others.views) * 1000;
+        const bNumber = parseFloat(b.others.views) * 1000;
+        return bNumber - aNumber;
+    });
+
+
     categoryCards.textContent = '';
     categoryCards2.textContent = '';
     // conditional statement 
@@ -48,11 +57,7 @@ const loadCategoryCard = async (id) => {
     }
     else {
 
-        cardDatas.sort((a, b) => {
-            const aNumber = parseFloat(a.others.views) * 1000;
-            const bNumber = parseFloat(b.others.views) * 1000;
-            return bNumber - aNumber;
-        });
+
         
         cardDatas.forEach((cardData) => {
             
