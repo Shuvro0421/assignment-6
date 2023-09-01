@@ -110,19 +110,9 @@ const convertSecsToHoursMins = (seconds) => {
 
 const sortByView = (sorting) =>{
 
-    console.log('cliekd')
+    console.log('cliekdc')
 
 }
-
-// const parseViewCount = (viewCount) => {
-//     const [count, unit] = viewCount.trim().split(' ');
-
-//     if (unit === 'K') {
-//         return parseFloat(count) * 1000;
-//     } else {
-//         return parseFloat(count);
-//     }
-// };
 
 const blog = () => {
     const newWindow = window.open('blog.html', '_blank');
