@@ -18,17 +18,13 @@ const loadData = async () => {
         `
         categoryButton.appendChild(categoryDiv);
 
+
     });
 
 
 }
 // category card
 const loadCategoryCard = async (id) => {
-
-
-    // const buttonButton = document.getElementById('btn-btn');
-    // buttonButton.style.backgroundColor = '#FF1F3D';
-    // buttonButton.style.color = 'white';
 
 
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
@@ -48,10 +44,19 @@ const loadCategoryCard = async (id) => {
             <p class="text-center text-4xl font-bold">Oops!! Sorry, There is no <br> content here</p>
         `;
         categoryCards2.appendChild(cardDiv);
+       
     }
     else {
 
+        cardDatas.sort((a, b) => {
+            const aNumber = parseFloat(a.others.views) * 1000;
+            const bNumber = parseFloat(b.others.views) * 1000;
+            return bNumber - aNumber;
+        });
+        
         cardDatas.forEach((cardData) => {
+            
+
 
             const cardDiv = document.createElement('div');
             cardDiv.classList = `card card-compact mt-10 bg-base-100 cursor-pointer p-1 transition ease-in-out delay-0 hover:translate-y-1  hover:scale-110 duration-300 hover:shadow-xl`;
@@ -71,7 +76,8 @@ const loadCategoryCard = async (id) => {
                         <p class="font-bold">${cardData?.title ? cardData.title : 'No title'}</p>
                         <div class="mt-2 text-sm text-gray-500">
                             <p class="flex gap-2">${cardData?.authors[0]?.profile_name ? cardData.authors[0].profile_name : 'No Name'} <span>${cardData?.authors[0]?.verified ? '<img src="./images/fi_10629607.png" alt="">' : ''}</span></p>
-                            <p class="mt-2">${cardData?.others?.views ? cardData.others.views + ' views' : 'No Views'}</p>
+                            <div class="mt-2">${cardData?.others?.views ? cardData.others.views : 'No Views'}</div>
+
                         </div>
                     </div>
                 </div>
@@ -80,17 +86,11 @@ const loadCategoryCard = async (id) => {
             `
             categoryCards.appendChild(cardDiv);
 
-            
-
-
-
         })
 
     }
 
-
-
-    console.log(cardDatas);
+    
 }
 
 // function hour to second conversion
@@ -108,21 +108,24 @@ const convertSecsToHoursMins = (seconds) => {
     return timeString;
 };
 
+const sortByView = (sorting) =>{
 
-// sort by view
-const sortByView = () => {
-
-    loadCategoryCard(true);
+    console.log('cliekd')
 
 }
 
+// const parseViewCount = (viewCount) => {
+//     const [count, unit] = viewCount.trim().split(' ');
 
+//     if (unit === 'K') {
+//         return parseFloat(count) * 1000;
+//     } else {
+//         return parseFloat(count);
+//     }
+// };
 
-// blog
-const blog = () =>{
-
-    const newWindow = window.open('blog.html' , '_blank');
-
+const blog = () => {
+    const newWindow = window.open('blog.html', '_blank');
 }
 
 loadCategoryCard('1000');
