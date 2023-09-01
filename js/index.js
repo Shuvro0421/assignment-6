@@ -1,3 +1,4 @@
+let categoryId = 1000;
 const loadData = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories')
     const data = await response.json();
@@ -24,24 +25,26 @@ const loadData = async () => {
 
 }
 // category card
-const loadCategoryCard = async (id) => {
-
-
+const loadCategoryCard = async (id, isSorted = true) => {
 
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await response.json();
     const cardDatas = data.data;
+    categoryId = id;
 
     const categoryCards = document.getElementById('category-cards');
     const categoryCards2 = document.getElementById('category-cards-2');
 
-    cardDatas.sort((a, b) => {
-        const aNumber = parseFloat(a.others.views) * 1000;
-        const bNumber = parseFloat(b.others.views) * 1000;
-        return bNumber - aNumber;
-    });
+    // sorting 
+    if (!isSorted) {
+        cardDatas.sort((a, b) => {
+            const aNumber = parseFloat(a.others.views) * 1000;
+            const bNumber = parseFloat(b.others.views) * 1000;
+            return bNumber - aNumber;
+        });
+    }
 
-
+    // erase the cards before assigning
     categoryCards.textContent = '';
     categoryCards2.textContent = '';
     // conditional statement 
@@ -53,14 +56,14 @@ const loadCategoryCard = async (id) => {
             <p class="text-center text-4xl font-bold">Oops!! Sorry, There is no <br> content here</p>
         `;
         categoryCards2.appendChild(cardDiv);
-       
+
     }
     else {
 
 
-        
+        // loop through each card data
         cardDatas.forEach((cardData) => {
-            
+
 
 
             const cardDiv = document.createElement('div');
@@ -81,7 +84,7 @@ const loadCategoryCard = async (id) => {
                         <p class="font-bold">${cardData?.title ? cardData.title : 'No title'}</p>
                         <div class="mt-2 text-sm text-gray-500">
                             <p class="flex gap-2">${cardData?.authors[0]?.profile_name ? cardData.authors[0].profile_name : 'No Name'} <span>${cardData?.authors[0]?.verified ? '<img src="./images/fi_10629607.png" alt="">' : ''}</span></p>
-                            <div class="mt-2">${cardData?.others?.views ? cardData.others.views : 'No Views'}</div>
+                            <div class="mt-2">${cardData?.others?.views ? cardData.others.views + ' views' : 'No Views'}</div>
 
                         </div>
                     </div>
@@ -95,7 +98,7 @@ const loadCategoryCard = async (id) => {
 
     }
 
-    
+
 }
 
 // function hour to second conversion
@@ -112,13 +115,13 @@ const convertSecsToHoursMins = (seconds) => {
     }
     return timeString;
 };
+// sort by view
+const sortByView = () => {
 
-const sortByView = (sorting) =>{
-
-    console.log('cliekdc')
-
+    loadCategoryCard(categoryId, false);
 }
 
+// open in new window
 const blog = () => {
     const newWindow = window.open('blog.html', '_blank');
 }
